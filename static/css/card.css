@@ -60,7 +60,7 @@ body{
     margin-top: -140px;
     padding: 10px 15px;
     text-align: center;
-    color: #111;
+    color: rgb(0, 0, 0);
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
@@ -76,6 +76,8 @@ body{
 .container .card .content .audio{
     align-items: center;
     justify-content: center;
-    margin-left:-15px;    
+    margin-left:-15px;
 }
+
+
 

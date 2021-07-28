@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #00b0fe;
+    background: url("../img/background.jpg") repeat-y;
 }
 
 .container{
@@ -27,12 +27,12 @@ body{
     position: relative;
     max-width: 300px;
     height: 215px;
-    background: #FFF;
+    /* background: #FFF; */
     margin: 30px 10px;
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+    /* box-shadow: 0px 5px 20px rgba(0,0,0,0.5); */
     transition: 0.3s ease-in-out;
 }
 
@@ -51,13 +51,8 @@ body{
 }
 
 .container .card .imgbox img{
-    max-width: 260px;
-    max-height: 260px;
-    width: auto;
-    height: auto;
+    max-width: 100%;
     border-radius: 4px;
-
-
 }
 
 .container .card .content{
@@ -74,6 +69,13 @@ body{
 .container .card:hover .content{
     visibility: visible;
     opacity: 1;
-    margin-top: -40px;
+    margin-top: -60px;
     transition-delay: 0.3s;
 }
+
+.container .card .content .audio{
+    align-items: center;
+    justify-content: center;
+    margin-left:-15px;    
+}
+

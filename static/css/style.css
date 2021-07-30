@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{ 
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("../img/background.jpg");
+}
+.header {
+    margin-top: 2rem;
+    height: 3rem;
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.nav__item{
+    margin: 1rem 4rem 1rem 4rem;
+}
+
+.nav__link {
+    font-family: 'Knewave', cursive;
+    font-size: 2rem;
+    color:black;
+    transition: 0.4s ease-in-out;
+    
+}
+
+.nav__link:hover{
+    color:blue;
+}
+
+.home__img #squaregif{
+    width: 80px;
+    display: relative;
+    transform: translateX(600px);
+    
+}
+
+.home__img #xgif{
+    width: 80px;
+    display: relative;
+    transform: translateX(450px) translateY(400px);
+    
+    
+}
+
+.home__img #trianglegif{
+    width: 80px;
+    display: relative;
+    transform: translateX(600px);
+}
+
+.home__img #circlegif{
+    width: 80px;
+    display: relative;
+    transform: translateX(-100px) translateY(50px);
+}
+

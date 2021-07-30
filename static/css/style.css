@@ -57,23 +57,35 @@ a{
     
 }
 
-.home__img #xgif{
+.home__img #trianglegif{
     width: 80px;
     display: relative;
-    transform: translateX(450px) translateY(400px);
+    transform: translateX(350px) translateY(400px);
     
     
 }
 
-.home__img #trianglegif{
+.home__img #xgif{
     width: 80px;
     display: relative;
-    transform: translateX(600px);
+    transform: translateX(1000px) translateY(300px);
 }
 
 .home__img #circlegif{
     width: 80px;
     display: relative;
     transform: translateX(-100px) translateY(50px);
+}
+
+.home__img #pikachu__home{
+    width: 400px;
+    display:block;
+    transform: translateX(200px) translateY(-50px);
+}
+
+.home__img #pop{
+    width: 400px;
+    display:block;
+    transform: translateX(700px) translateY(-420px);
 }
 

@@ -1,31 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
 *{
     margin: 0;
     padding: 0;
 }
 
+
 html{ 
     scroll-behavior: smooth;
 }
 
+
 body{
     background-image: url("../img/background.jpg");
 }
+
+
 .header {
     margin-top: 2rem;
     height: 3rem;
 }
 
 
-
 ul{
     list-style: none;
 }
 
+
+
 a{
     text-decoration: none;
 }
+
+
 
 .nav__list {
     display: flex;
@@ -33,6 +41,8 @@ a{
     flex-wrap: wrap;
     
 }
+
+
 
 .nav__item{
     margin: 1rem 4rem 1rem 4rem;
@@ -95,7 +105,6 @@ a{
 }
 
 
-
 .home__content{
     display: block;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -115,6 +124,7 @@ a{
     align-items: center;
 }
 
+
 .catalog__button{
     transform: translateX(900px) translateY(-210px);
     padding: 1rem;
@@ -124,3 +134,77 @@ a{
     border-style: none;
 }
 
+/* footer */
+
+.footer__container {
+    background-color:hsla(0, 0%, 100%, 0.103);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+}
+  
+
+  /* Footer links */
+  
+  .footer__container .footer-links {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+    transition: ease .25s;
+}
+  
+  .footer__container .footer-links a {
+    font-family:'Roboto', sans-serif;
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    transition: ease .25s;
+}
+  
+  .footer__container .footer-links a:before {
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+  
+  
+  .footer__container .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+}
+  
+  .footer__container .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+    transition:all .25s;
+}
+  
+  .footer__container .footer-right a:hover{
+      transform:scale(1.1); -webkit-transform:scale(1.1);
+}
+  
+  .footer__container .footer-links a:hover{
+      text-decoration:underline;
+}
+
+.footer-left span{
+    font-size: .6rem;
+    color:hsla(0, 0%, 100%, 0.712);
+}

@@ -47,45 +47,65 @@ a{
 }
 
 .nav__link:hover{
-    color:blue;
+    color: hsla(0, 94%, 51%, 0.822);
+}
+
+.home__img{
+    height: 380px;
 }
 
 .home__img #squaregif{
     width: 80px;
     display: relative;
-    transform: translateX(600px);
-    
+    transform: translateX(600px) translateY(-180px);
 }
 
 .home__img #trianglegif{
     width: 80px;
     display: relative;
-    transform: translateX(350px) translateY(400px);
-    
-    
+    transform: translateX(350px) translateY(200px);
 }
 
 .home__img #xgif{
     width: 80px;
     display: relative;
-    transform: translateX(1000px) translateY(300px);
+    transform: translateX(1000px) translateY(100px);
 }
 
 .home__img #circlegif{
     width: 80px;
     display: relative;
-    transform: translateX(-100px) translateY(50px);
+    transform: translateX(-100px) translateY(-150px);
 }
 
 .home__img #pikachu__home{
     width: 400px;
     display:block;
-    transform: translateX(200px) translateY(-50px);
+    transform: translateX(-30px) translateY(-250px);
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter: drop-shadow(10px 10px 10px #222);
 }
 
 .home__img #pop{
-    width: 400px;
+    width: 250px;
     display:block;
-    transform: translateX(700px) translateY(-420px);
+    transform: translateX(1000px) translateY(-680px) rotate(15deg);
+    -webkit-filter: drop-shadow(20px 20px 20px #222);
+    filter: drop-shadow(20px 20px 20px #222);
 }
 
+
+
+.home__content{
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    text-align: justify;
+    background-color: hsla(0, 0%, 100%, 0.432);
+    border-radius: .5rem;
+    transform: translateY(150px)
+    
+}

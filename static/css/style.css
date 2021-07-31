@@ -106,6 +106,21 @@ a{
     text-align: justify;
     background-color: hsla(0, 0%, 100%, 0.432);
     border-radius: .5rem;
-    transform: translateY(150px)
-    
+    transform: translateY(150px);
 }
+
+.home__button{
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalog__button{
+    transform: translateX(900px) translateY(-210px);
+    padding: 1rem;
+    font-family: 'Knewave', cursive;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border-style: none;
+}
+

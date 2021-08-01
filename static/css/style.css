@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -9,11 +10,13 @@
 
 html{ 
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 
 body{
     background-image: url("../img/background.jpg");
+    height: 100%;
 }
 
 
@@ -134,6 +137,84 @@ a{
     border-style: none;
 }
 
+/* catalog page */
+
+.catalog{
+    min-height: 100%;
+}
+
+
+
+.catalog__container{
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.catalog__container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    /* background: #FFF; */
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 0px 5px 20px rgba(0,0,0,0.5); */
+    transition: 0.3s ease-in-out;
+}
+
+.catalog__container .card:hover{
+    height: 420px;
+}
+
+.catalog__container .card .imgbox{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px; 
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.catalog__container .card .imgbox img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.catalog__container .card .catalog__content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.catalog__container .card:hover .catalog__content{
+    visibility: visible;
+    font-family: 'Poppins';  
+    opacity: 1;
+    margin-top: -60px;
+    transition-delay: 0.3s;
+}
+
+.catalog__container .card .catalog__content .audio{
+    align-items: center;
+    justify-content: center;
+    margin-left:-15px;
+}
+
+
+
 /* footer */
 
 .footer__container {
@@ -154,8 +235,10 @@ a{
     font-weight: bold;
     color: #ffffff;
     margin: 0 0 10px;
+    height: 100%;
     padding: 0;
     transition: ease .25s;
+    
 }
   
   .footer__container .footer-links a {

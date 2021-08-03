@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{ 
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+
+body{
+    background-image: url("../img/background.jpg");
+    height: 100%;
+}
+
+
+.header {
+    margin-top: 2rem;
+    height: 3rem;
+}
+
+
+ul{
+    list-style: none;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+
+
+.nav__item{
+    margin: 1rem 4rem 1rem 4rem;
+}
+
+.nav__link {
+    font-family: 'Knewave', cursive;
+    font-size: 2rem;
+    color:black;
+    transition: 0.4s ease-in-out;
+    
+}
+
+.nav__link:hover{
+    color: hsla(0, 94%, 51%, 0.822);
+}
+
+.home__img{
+    height: 380px;
+}
+
+.home__img #squaregif{
+    width: 80px;
+    display: relative;
+    transform: translateX(600px) translateY(-180px);
+}
+
+.home__img #trianglegif{
+    width: 80px;
+    display: relative;
+    transform: translateX(350px) translateY(200px);
+}
+
+.home__img #xgif{
+    width: 80px;
+    display: relative;
+    transform: translateX(1000px) translateY(100px);
+}
+
+.home__img #circlegif{
+    width: 80px;
+    display: relative;
+    transform: translateX(-100px) translateY(-150px);
+}
+
+.home__img #pikachu__home{
+    width: 400px;
+    display:block;
+    transform: translateX(-30px) translateY(-250px);
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter: drop-shadow(10px 10px 10px #222);
+}
+
+.home__img #pop{
+    width: 250px;
+    display:block;
+    transform: translateX(1000px) translateY(-680px) rotate(15deg);
+    -webkit-filter: drop-shadow(20px 20px 20px #222);
+    filter: drop-shadow(20px 20px 20px #222);
+}
+
+
+.home__content{
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    text-align: justify;
+    background-color: hsla(0, 0%, 100%, 0.432);
+    border-radius: .5rem;
+    transform: translateY(150px);
+}
+
+.home__button{
+    display:block;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.catalog__button{
+    transform: translateX(900px) translateY(-210px);
+    padding: 1rem;
+    font-family: 'Knewave', cursive;
+    font-size: 2rem;
+    border-radius: .5rem;
+    border-style: none;
+}
+
+/* catalog page */
+
+.catalog{
+    min-height: 100%;
+}
+
+
+
+.catalog__container{
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.catalog__container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    /* background: #FFF; */
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 0px 5px 20px rgba(0,0,0,0.5); */
+    transition: 0.3s ease-in-out;
+}
+
+.catalog__container .card:hover{
+    height: 420px;
+}
+
+.catalog__container .card .imgbox{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px; 
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.catalog__container .card .imgbox img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.catalog__container .card .catalog__content{
+    font-family: 'Poppins';
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.catalog__container .card:hover .catalog__content{
+    visibility: visible;  
+    opacity: 1;
+    margin-top: -60px;
+    transition-delay: 0.3s;
+}
+
+.catalog__container .card .catalog__content .audio{
+    align-items: center;
+    justify-content: center;
+    margin-left:-15px;
+}
+
+/* about */
+.about{
+    min-height: 210%;
+    position: relative;
+}
+.about h2{
+    color: #fff;
+}
+.about .about-icon{
+    color: #fff;
+    font-size: 2rem;
+}
+
+.about__title{ 
+    position: fixed;
+    color:#fff;
+    font-family: 'Knewave';
+    font-size: 100px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    transform: translateX(100px) translateY(150px);
+    
+}
+.about__container{
+    position: relative;
+    float: right;
+    width: 60%;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.about__content{
+    position: relative;
+    font-family: 'Poppins';
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    
+}
+.about__img{
+    width: 500px;
+}
+
+.about__img img{
+    width: 85%;
+    height: 50;
+    border-radius: 50%;
+}
+
+.about-icon{
+    color: black;
+    font-size: 1.5rem;
+}
+
+/* footer */
+
+.footer__container {
+    position: relative;
+    background-color:hsla(0, 0%, 100%, 0.103);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+}
+  
+
+  /* Footer links */
+  
+  .footer__container .footer-links {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    height: 100%;
+    padding: 0;
+    transition: ease .25s;
+    
+}
+  
+  .footer__container .footer-links a {
+    font-family:'Roboto', sans-serif;
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    transition: ease .25s;
+}
+  
+  .footer__container .footer-links a:before {
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+  
+  
+  .footer__container .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+}
+  
+  .footer__container .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+    transition:all .25s;
+}
+  
+  .footer__container .footer-right a:hover{
+      transform:scale(1.1); -webkit-transform:scale(1.1);
+}
+  
+  .footer__container .footer-links a:hover{
+      text-decoration:underline;
+}
+
+.footer-left span{
+    font-size: .6rem;
+    color:hsla(0, 0%, 100%, 0.712);
+}

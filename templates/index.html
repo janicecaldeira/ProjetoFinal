@@ -1,19 +1,83 @@
 <!-- ● Uma página inicial, explicando sobre o que é seu catálogo; index.html -->
 
 <!DOCTYPE html>
-<html>
+
+<html lang = 'pt-br'>
     <head>
-    
-    </head>
-    <header>
+
+        <!-- O charset UTF-8 é o que usamos na web atual e faz parte de um padrão chamado Unicode. A ideia é que com ele possamos representar qualquer caractere de qualquer idioma. Ao usar o charset dentro da tag meta de nosso arquivo estamos dizendo ao navegador: quando for ler esse arquivo, use as regras do charset UTF-8. -->
+        <meta charset="UTF-8">
+
+        <!-- Isso dá ao navegador instruções sobre como controlar as dimensões e o dimensionamento da página.
+        ".width=device-width" Define a largura da página para seguir a largura de tela do dispositivo (que vai variar dependendo do dispositivo)
+        ".initial-scale=1.0" Define o nível inicial de zoom quando a página é carregada pela primeira vez pelo navegador -->
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+
+        <title>Funko Pop Vinyl - Catalog</title>
+
+    </head> 
+    <header class = "header" id= "header">
+        <nav class="nav container">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item">
+                        <a href="../templates/index.html" class="nav__link">
+                            .home
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="../templates/catalogo.html" class="nav__link">
+                            .catalog
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/about.html" class="nav__link">
+                            .about
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/admin.html" class="nav__link">
+                            .admin
+                        </a>
+                    </li>    
+                </ul>
+            </div>
+        </nav>
 
     </header>
     <body>
-        <nav>
+        <section class = "home" id = "home">
 
-        </nav>
+            <div class = "home__content">
+                <p>
+                    Bonecos colecionáveis sempre foram uma febre entre os grupos de fãs de jogos e outras tribos. 
+                    As miniaturas da linha POP medem 9,5 centímetros de altura e são feitos de vinil. Eles recebem inúmeros detalhes para caracterizar cada um dos personagens que representam, sem nunca perder o “jeitinho Funko”. A linha POP da Funko foi inspirada nos estilos de desenhos japoneses, com olhos grandes e traços finos, mas voltados para representar ícones da cultura pop.
+                </p>
+            </div>
+            
+            <div class = "home__img">
+                <img src="../static/img/squaregif.gif" id = "squaregif"> 
+                <img src="../static/img/xgif.gif" id = "xgif">
+                <img src="../static/img/trianglegif.gif" id = "trianglegif">
+                <img src="../static/img/circlegif.gif" id = "circlegif"> 
+                <img src="../static/img/pikachu.png" id = "pikachu__home">
+                <img src="../static/img/pop.png" id = "pop">        
+            </div>
 
-        <section>
+            <div class= "home__button">
+                <button class= "catalog__button">
+                    .catalog
+                </button>
+
+            </div>
 
         </section>
 
@@ -22,8 +86,33 @@
         </section>
     </body>
 
-    <footer>
-        
+    
+    <footer class="footer__container">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="uil uil-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+
+                <a href="#">.home</a>
+
+                <a href="#">.catalog</a>
+
+                <a href="#">.about</a>
+
+                <a href="#">.admin</a>
+
+            </div>
+
+            <span>Grupo 2 &copy; 2021</span>
+        </div>
+
     </footer>
+    
 
 </html>

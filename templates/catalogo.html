@@ -2,21 +2,103 @@
 
 
 <!DOCTYPE html>
-<html>
+
+<html lang = 'pt-br'>
     <head>
 
-    </head>
-    <header>
+        <!-- O charset UTF-8 é o que usamos na web atual e faz parte de um padrão chamado Unicode. A ideia é que com ele possamos representar qualquer caractere de qualquer idioma. Ao usar o charset dentro da tag meta de nosso arquivo estamos dizendo ao navegador: quando for ler esse arquivo, use as regras do charset UTF-8. -->
+        <meta charset="UTF-8">
 
-    </header>
+        <!-- Isso dá ao navegador instruções sobre como controlar as dimensões e o dimensionamento da página.
+        ".width=device-width" Define a largura da página para seguir a largura de tela do dispositivo (que vai variar dependendo do dispositivo)
+        ".initial-scale=1.0" Define o nível inicial de zoom quando a página é carregada pela primeira vez pelo navegador -->
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 
-    <body>
-        <nav>
+        <title>Funko Pop Vinyl - Catalog</title>
 
+    </head> 
+    <header class = "header" id= "header">
+        <nav class="nav container">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item">
+                        <a href="../templates/index.html" class="nav__link">
+                            .home
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="../templates/catalogo.html" class="nav__link">
+                            .catalog
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/about.html" class="nav__link">
+                            .about
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/admin.html" class="nav__link">
+                            .admin
+                        </a>
+                    </li>    
+                </ul>
+            </div>
         </nav>
 
-        <section>
+    </header>
+    <body>
+        <section class = "catalog" id = "catalog">
+            <div class="catalog__container">
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/pikachu.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/pokemon.mp3">
+                        </audio>
+                        <h2>Pikachu</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/sonic.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/sonic.mp3">
+                        </audio>
+                        <h2>Sonic</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/megaman.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/megaman.mp3">
+                        </audio>
+                        <h2>Megaman</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
+            </div>
+
+
 
         </section>
 
@@ -25,8 +107,33 @@
         </section>
     </body>
 
-    <footer>
-        
+    
+    <footer class="footer__container">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="uil uil-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+
+                <a href="#">.home</a>
+
+                <a href="#">.catalog</a>
+
+                <a href="#">.about</a>
+
+                <a href="#">.admin</a>
+
+            </div>
+
+            <span>Grupo 2 &copy; 2021</span>
+        </div>
+
     </footer>
+    
 
 </html>

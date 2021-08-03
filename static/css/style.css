@@ -101,7 +101,7 @@ a{
 
 .home__img #pop{
     width: 250px;
-    display:block;
+    display:relative;
     transform: translateX(1000px) translateY(-680px) rotate(15deg);
     -webkit-filter: drop-shadow(20px 20px 20px #222);
     filter: drop-shadow(20px 20px 20px #222);

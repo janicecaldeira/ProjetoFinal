@@ -8,7 +8,7 @@ class Funko(db.Model):
     funko_name = db.Column(db.String(700), nullable=False)
     funko_img = db.Column(db.String(500), nullable=False)
     description = db.Column(db.String(500), nullable=False)
-    music = db.Column(db.String(300), nullable=False)
+    music = db.Column(db.String(500))
     
     def __init__(self, funko_name, funko_img, description, music):
         self.funko_name = funko_name

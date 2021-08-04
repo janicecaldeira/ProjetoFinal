@@ -5,10 +5,10 @@ db = SQLAlchemy(app)
 
 class Funko(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    funko_name = db.Column(db.String(700), nullable=False)
-    funko_img = db.Column(db.String(500), nullable=False)
-    description = db.Column(db.String(500), nullable=False)
-    music = db.Column(db.String(500), nullable=True)
+    funko_name = db.Column(db.String(150), nullable=False)
+    funko_img = db.Column(db.String(700), nullable=False)
+    description = db.Column(db.String(700), nullable=False)
+    music = db.Column(db.String(700), nullable=True)
     
     def __init__(self, funko_name, funko_img, description, music):
         self.funko_name = funko_name

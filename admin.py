@@ -1,59 +1,69 @@
+from flask import Flask, render_template, redirect, request, session, flash
 from flask_sqlalchemy import SQLAlchemy
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qovpiolx:ldA1GZtyHZpNnDs-OcjClFO6In5BhivJ@kesavan.db.elephantsql.com/qovpiolx'
-db = SQLAlchemy(app)
+admin = Flask(__name__)
+admin.secret_key = "udzssq"
+
+admin.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qovpiolx:ldA1GZtyHZpNnDs-OcjClFO6In5BhivJ@kesavan.db.elephantsql.com/qovpiolx'
+db = SQLAlchemy(admin)
 
 class Funko(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    funko_name = db.Column(db.String(700), nullable=False)
-    funko_img = db.Column(db.String(500), nullable=False)
+    funkoName = db.Column(db.String(700), nullable=False)
+    funkoImg = db.Column(db.String(500), nullable=False)
     description = db.Column(db.String(500), nullable=False)
     music = db.Column(db.String(300), nullable=False)
     
-    def __init__(self, funko_name, funko_img, description, music):
-        self.funko_name = funko_name
-        self.funko_img = funko_img
+    def __init__(self, funkoName, funkoImg, description, music):
+        self.funkoName = funkoName
+        self.funkoImg = funkoImg
         self.description = description
         self.music = music
+        
+@admin.route('/')
+def index():
+    funko=Funko.query.all()
+    return render_template('admin.html', funko=funko)
 
-@app.route('/new', methods=['GET', 'POST'])
+@admin.route('/new', methods=['GET', 'POST'])
 def new():
     if request.method == 'POST':
-        funkos = Funko(
-            request.form['funko_name'],
-            request.form['funko_img'],
+        funko = Funko(
+            request.form['funkoName'],
+            request.form['funkoImg'],
             request.form['description'],
             request.form['music']
         )
     db.session.add(funko)
     db.session.commit()
     flash('Funko adicionado com sucesso!')
-    return redirect('/admin')
+    return redirect('/')
 
-@app.route('/<id>')
+@admin.route('/<id>')
 def id(id):
-    funkos = Funko.query.get(id)
-    return render_template('admin.html', funkos=funkos)
+    funko = Funko.query.get(id)
+    return render_template('admin.html', funko=funko)
 
-@app.route('/edit/<id>', methods=['GET', 'POST'])
+@admin.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
     funkoEdit = Funko.query.get(id)
+    funko=Funko.query.all()
     if request.method == "POST":
-        funkoEdit.funko_name = request.form['funko_name']
-        funkoEdit.funko_img = request.form['funko_img']
+        funkoEdit.funkoName = request.form['funkoName']
+        funkoEdit.funkoImg = request.form['funkoImg']
         funkoEdit.description = request.form['description']
         funkoEdit.music = request.form['music']
         db.session.commit()
-        return redirect('/admin')
-        return render_template('admin.html', funkoEdit=funkoEdit) 
+        return redirect('/')
+    return render_template('admin.html', funkoEdit=funkoEdit, funko=funko) 
 
-@app.route('/delete/<id>') 
+@admin.route('/delete/<id>') 
 def delete(id):
-    funkos = Funko.query.get(id)
-    db.session.delete(funkos)
+    funko = Funko.query.get(id)
+    db.session.delete(funko)
     db.session.commit()
-    return redirect('/admin')
+    return redirect('/')
 
 if __name__ == '__main__':
     db.create_all()
-    app.run(debug=True)
+    admin.run(debug=True)

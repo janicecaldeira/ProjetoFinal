@@ -9,17 +9,10 @@ db = SQLAlchemy(admin)
 
 class Funko(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-<<<<<<< HEAD
-    funkoName = db.Column(db.String(700), nullable=False)
-    funkoImg = db.Column(db.String(500), nullable=False)
-    description = db.Column(db.String(500), nullable=False)
-    music = db.Column(db.String(300), nullable=False)
-=======
     funko_name = db.Column(db.String(150), nullable=False)
     funko_img = db.Column(db.String(700), nullable=False)
     description = db.Column(db.String(700), nullable=False)
     music = db.Column(db.String(700), nullable=True)
->>>>>>> 68a42787c1952e502fef8f1f001364c24035c472
     
     def __init__(self, funkoName, funkoImg, description, music):
         self.funkoName = funkoName

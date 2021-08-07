@@ -66,8 +66,4 @@ def delete(id):
 
 if __name__ == '__main__':
     db.create_all()
-<<<<<<< HEAD
-    admin.run(debug=True)
-=======
     app.run(debug=True)
->>>>>>> 68a42787c1952e502fef8f1f001364c24035c472

@@ -9,8 +9,8 @@ db = SQLAlchemy(app)
 
 class Funko(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    funko_name = db.Column(db.String(150), nullable=False)
-    funko_img = db.Column(db.String(700), nullable=False)
+    funkoName = db.Column(db.String(150), nullable=False)
+    funkoImg = db.Column(db.String(700), nullable=False)
     description = db.Column(db.String(700), nullable=False)
     music = db.Column(db.String(700), nullable=True)
     
@@ -51,18 +51,13 @@ def auth():
         flash('Erro no login, tente novamente!')
         return redirect('/login')
 
-@app.route('/logout')
-def logout():
-   session['usuario_logado'] = None
-   return redirect('/login')
-
 @app.route('/adm')
 def adm():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         flash('Faça login!')
         return redirect('/login')
-    funko = Funko.query.get(id)
-    return render_template('adm.html', funko=funko, funko='')
+    funko = Funko.query.all()
+    return render_template('adm.html', funko=funko, funkoEdit='')
    
 @app.route('/new', methods=['GET', 'POST'])
 def new():

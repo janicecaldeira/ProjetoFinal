@@ -1,4 +1,5 @@
-<!-- ● Uma página inicial, explicando sobre o que é seu catálogo; index.html -->
+<!-- ● Uma página para a listagem dos itens do catálogo; catalog.html -->
+
 
 <!DOCTYPE html>
 
@@ -17,7 +18,7 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 
-        <title>Funko Pop Vinyl</title>
+        <title>Funko Pop Vinyl - Catalog</title>
 
     </head> 
     <header class = "header" id= "header">
@@ -32,7 +33,7 @@
                     </li>
                     
                     <li class="nav__item">
-                        <a href="../templates/catalog.html" class="nav__link">
+                        <a href="../templates/catalogo.html" class="nav__link">
                             .catalog
                         </a>
                     </li>    
@@ -54,30 +55,50 @@
 
     </header>
     <body>
-        <section class = "home" id = "home">
-
-            <div class = "home__content">
-                <p>
-                    Bonecos colecionáveis sempre foram uma febre entre os grupos de fãs de jogos e outras tribos. 
-                    As miniaturas da linha POP medem 9,5 centímetros de altura e são feitos de vinil. Eles recebem inúmeros detalhes para caracterizar cada um dos personagens que representam, sem nunca perder o “jeitinho Funko”. A linha POP da Funko foi inspirada nos estilos de desenhos japoneses, com olhos grandes e traços finos, mas voltados para representar ícones da cultura pop.
-                </p>
+        <section class = "catalog" id = "catalog">
+            <div class="catalog__container">
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/pikachu.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/pokemon.mp3">
+                        </audio>
+                        <h2>Pikachu</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/sonic.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/sonic.mp3">
+                        </audio>
+                        <h2>Sonic</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="imgbox">
+                        <img src="../static/img/megaman.png">
+                    </div>
+                    <div class="catalog__content">
+                        <audio class="audio" controls>
+                            <source src="../static/audio/megaman.mp3">
+                        </audio>
+                        <h2>Megaman</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                </div>
+        
             </div>
-            
-            <div class = "home__img">
-                <img src="../static/img/squaregif.gif" id = "squaregif"> 
-                <img src="../static/img/xgif.gif" id = "xgif">
-                <img src="../static/img/trianglegif.gif" id = "trianglegif">
-                <img src="../static/img/circlegif.gif" id = "circlegif"> 
-                <img src="../static/img/pikachu.png" id = "pikachu__home">
-                <img src="../static/img/pop.png" id = "pop">        
-            </div>
 
-            <div class= "home__button">
-                <button class= "catalog__button">
-                    .catalog
-                </button>
 
-            </div>
 
         </section>
 
@@ -99,13 +120,13 @@
 
             <div class="footer-links">
 
-                <a href="../templates/index.html">.home</a>
+                <a href="#">.home</a>
 
-                <a href="../templates/catalogo.html">.catalog</a>
+                <a href="#">.catalog</a>
 
-                <a href="../templates/about.html">.about</a>
+                <a href="#">.about</a>
 
-                <a href="../templates/admin.html">.admin</a>
+                <a href="#">.admin</a>
 
             </div>
 

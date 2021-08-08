@@ -2,23 +2,169 @@
 foto, uma breve descrição sobre cada pessoa e links para se conectar no
 linkedin e no github de cada um. about.html  -->
 
-
 <!DOCTYPE html>
-<html>
+
+<html lang = 'pt-br'>
     <head>
 
-    </head>
-    <header>
+        <!-- O charset UTF-8 é o que usamos na web atual e faz parte de um padrão chamado Unicode. A ideia é que com ele possamos representar qualquer caractere de qualquer idioma. Ao usar o charset dentro da tag meta de nosso arquivo estamos dizendo ao navegador: quando for ler esse arquivo, use as regras do charset UTF-8. -->
+        <meta charset="UTF-8">
 
-    </header>
+        <!-- Isso dá ao navegador instruções sobre como controlar as dimensões e o dimensionamento da página.
+        ".width=device-width" Define a largura da página para seguir a largura de tela do dispositivo (que vai variar dependendo do dispositivo)
+        ".initial-scale=1.0" Define o nível inicial de zoom quando a página é carregada pela primeira vez pelo navegador -->
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 
-    <body>
-        <nav>
+        <title>Funko Pop Vinyl - About</title>
 
+    </head> 
+    <header class = "header" id= "header">
+        <nav class="nav container">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item">
+                        <a href="../templates/index.html" class="nav__link">
+                            .home
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="../templates/catalogo.html" class="nav__link">
+                            .catalog
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/about.html" class="nav__link">
+                            .about
+                        </a>
+                    </li>    
+
+                    <li class="nav__item">
+                        <a href="../templates/admin.html" class="nav__link">
+                            .admin
+                        </a>
+                    </li>    
+                </ul>
+            </div>
         </nav>
 
-        <section>
+    </header>
+    <body>
+        <section class = "about" id = "about">
+            <h1 class= "about__title">.about</h1>
+            <div class="about__container">
+                <div class="about__content">
+                    <div class="about__img">
+                        <img src="../static/img/janice.jpeg">
+                    </div>
+                    <div class="about__text">
+                        <h2>Janice Caldeiro</h2>
+                        <p>Meu nome é Janice, tenho 33 anos e sou Dev Back End em formação. Sou do tipo que coloco paixão em tudo que faço e me dedico ao máximo para fazer o melhor possível!</p>
+                    </div>
+                    <div class="about__icons">
+                        <a href= "https://github.com/janicecaldeira" target="_blank">
+                            <i class="uil uil-github about-icon"></i>  
+                        </a>
+                        <a href= "https://www.linkedin.com/in/janicecaldeira/" target="_blank">
+                            <i class="uil uil-linkedin about-icon"></i> 
+                        </a>
+                    </div>
+                </div>    
+
+                <div class="about__content">
+                    <div class="about__img">
+                        <img src="../static/img/vander.jpg">
+                    </div>
+                    <div class="about__text">
+                        <h2>Mirian Amorim</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                    <div class="about__icons">
+                        <a href= "https://github.com/MirianAmorim" target="_blank">
+                            <i class="uil uil-github about-icon"></i>  
+                        </a>
+                        <a href= "https://www.linkedin.com/in/mirian-amorim-91409029/" target="_blank">
+                            <i class="uil uil-linkedin about-icon"></i> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about__content">
+                    <div class="about__img">
+                        <img src="../static/img/danilo.jpg">
+                    </div>
+                    <div class="about__text">
+                        <h2>Danilo Machinez</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                    </div>
+                    <div class="about__icons">
+                        <a href= "https://github.com/danmachinez" target="_blank">
+                            <i class="uil uil-github about-icon"></i>  
+                        </a>
+                        <a href= "https://www.linkedin.com/in/dmachinez/" target="_blank">
+                            <i class="uil uil-linkedin about-icon"></i> 
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="about__content">
+                    <div class="about__img">
+                        <img src="../static/img/vander.jpg">
+                    </div>
+                    <div class="about__text">
+                        <h2>Vander Xavier</h2>
+                        <p>Resolvedor de problemas por natureza, pai,  músico por paixão, educador social por vivência,
+                            Tudo isso dentro de uma cabeça sonhadora com 32 anos.
+                            Um ser humano médio, mas cheio de história pra contar.
+                            </p>
+                    </div>
+                    <div class="about__icons">
+                        <a href= "https://github.com/Vanderxavierb" target="_blank">
+                            <i class="uil uil-github about-icon"></i>  
+                        </a>
+                        <a href= "https://www.linkedin.com/in/vanderson-xavier-b04409214/" target="_blank">
+                            <i class="uil uil-linkedin about-icon"></i> 
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div class="about__content">
+                    <div class="about__img">
+                        <img src="../static/img/Max.jpg">
+                    </div>
+                    <div class="about__text">
+                        <h2>Maximiliano Gonzalo LyFe</h2>
+                        <p>Meu nome é Maximiliano, tenho 28 anos e sou Dev Full Stack em formação. Sou uma pessoa predisposta e gosto de me destacar em tudo o que faço.</p>
+                    </div>
+                    <div class="about__icons">
+                        <a href= "https://github.com/maxlyfe" target="_blank">
+                            <i class="uil uil-github about-icon"></i>  
+                        </a>
+                        <a href= "https://www.linkedin.com/in/maxlyfe/" target="_blank">
+                            <i class="uil uil-linkedin about-icon"></i> 
+                        </a>
+                    </div>
+                    
+                </div>
+
+                
+
+                
+            </div>
+        
+                
+        
+            
+
+
 
         </section>
 
@@ -27,8 +173,33 @@ linkedin e no github de cada um. about.html  -->
         </section>
     </body>
 
-    <footer>
-        
+    
+    <footer class="footer__container">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="uil uil-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+
+                <a href="#">.home</a>
+
+                <a href="#">.catalog</a>
+
+                <a href="#">.about</a>
+
+                <a href="#">.admin</a>
+
+            </div>
+
+            <span>Grupo 2 &copy; 2021</span>
+        </div>
+
     </footer>
+    
 
 </html>

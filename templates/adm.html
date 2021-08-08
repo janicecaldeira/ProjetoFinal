@@ -9,165 +9,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Catalog | Admin</title>
+    <link rel="stylesheet" href="../static/css/adm.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Funko Pop Vinyl | Adm</title>
 </head>
 
-<body>        
-        <h1>Área Administrativa</h1>
-        <ul>
-            <a id="btn-add"><li>
-                <i class="fa fa-th-list" aria-hidden="true"></i>
-                Adcionar Novo Funko</li>
-            </a>  
-            <a id="btn-listar"><li>
-                <i class="fa fa-plus-square" aria-hidden="true"></i>
-                Funkos Adicionados</li>
-            </a> 
-            <a href="/"><li>
-                <i class="fa fa-home" aria-hidden="true"></i>
-                Home</li>
-            </a>
-            <a href="/"><li>
-                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-                Sair</li>
-            </a> 
+<header class = "header" id= "header">
+    <nav class="nav container">
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+
+                <li class="nav__item">
+                    <a href="/" class="nav__link">.home </a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/catalog" class="nav__link">.catalog</a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="/about" class="nav__link">.about</a>
+                </li>   
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<body>
+
+    <article id="msg">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
         </ul>
-    </aside>
-    
-    <section id="body">
-
-        {% if funkoEdit == undefined %}
-        <article id="new">
-            <form action='/new' method="POST">
-
-                <h1>Adcionar Novo Funko</h1>
-
-                <label for="funkoName">Name</label>
-                <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName">
-
-                <label for="funkoImg">Image</label>
-                <input type="text" placeholder="Link da imagem" id="imagem" name="funkoImg">
-
-                <label for="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10"
-                    placeholder="Digite a descrição"></textarea>
-
-                <label for="music">Música</label>
-                <input type="text" placeholder="Link da música" id="music" name="music">
-
-                <button type="submit">Enviar</button>
-
-            </form>
-        </article>
         {% endif %}
+        {% endwith %}
+    </article>
 
-        {% if funkoEdit == undefined %}
-        <article id="lista">
-            <table>
+<section id="adm">
+    <p>Área reservada para a página ADM</p>
+</section>
 
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Imagem</th>
-                        <th style="text-align:center">Descrição</th>
-                        <th>Musica</th>
-                    </tr>
-                </thead>
+<footer class="footer__container">
 
-                <tbody>
-                    {% for f in funko %}
-                    <tr>
-                        <td>{{f.id}}</td>
-                        <td>{{f.funkoName}}</td>
-                        <td><a href="{{f.funkoImg}}" target="_blank">{{f.funkoImg}}</a></td>
-                        <td><a href="{{f.description}}" target="_blank">{{f.description}}</a></td>
-                        <td><a href="{{f.music}}" target="_blank">{{f.music}}</a></td>
-                        <td>
-                            <a href="/edit/{{f.id}}">Editar</a>
-                            <a href="/delete/{{f.id}}">Apagar</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+    <div class="footer-right">
 
-            </table>
-        </article>
-        {% endif %}
+        <a href="https://github.com/janicecaldeira/ProjetoFinal/tree/main" target="_blank"><i class="uil uil-github"></i></a>
 
-        {% if funkoEdit != undefined %}
-        <article id="edit">
-            <form action='/edit/{{funkoEdit.id}}' method="POST">
+    </div>
 
-                <h1>Editar Funko</h1>
+    <div class="footer-left">
 
-                <label for="funkoName">Nome</label>
-                <input type="text" placeholder="funkoName" id="name" name="funkoName" value="{{funkoEdit.funkoName}}">
+        <div class="footer-links">
+            <a href="/">.home</a>
+            <a href="/catalog">.catalog</a>
+            <a href="/about">.about</a>
+            <a href="/login">.admin</a>
+        </div>
 
-                <label for="funkoImg">Imagem</label>
-                <input type="text" placeholder="funkoImg" id="img" name="funkoImg" value="{{funkoEdit.funkoImg}}">
+        <span>Grupo 2 &copy; 2021</span>
+    </div>
 
-                <label for="music">Link</label>
-                <input type="text" placeholder="music" id="music" name="music" value="{{funkoEdit.music}}">
+</footer>
 
-                <label for="description">Descrição</label>
-                <textarea name="description" id="description" cols="30" rows="10"
-                    placeholder="Digite uma descrição">{{funkoEdit.description}}</textarea>
+<script src="../static/js/adm.js"></script>
 
-                <div>
-                    <a href="/admin">Cancelar</a>
-                    <button type="submit">Atualizar</button>
-                </div>
-                
-
-            </form>
-        </article>
-        {% endif %}
-    </section>
-
-    <aside id="right">        
-        <h1>Instruções</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat aspernatur assumenda odio iste officia ea accusamus voluptate possimus sit facilis deleniti, fugit impedit laudantium cum vitae. Minus est beatae earum?</p>
-    </aside>
-
-
-    {% if funko != undefined %}
-        <section class="modal">
-            <div id="card">
-
-                <a href="/" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <h2>Confirmação</h2>
-                <hr>
-
-                <p>Deseja realmente apagar: {{funko.id}} </p>
-                <div id="btns">
-                    <a class="btn-cancelar" id="close" href="/">Cancelar</a>
-                    <a class="btn-apagar" href="/delete/{{funko.id}}">Apagar</a>
-                </div>
-            </div>
-        </section>
-    {% endif %}
-
-    <script>
-        setTimeout(() => {
-            document.querySelector('#msg').style.display = 'none'
-        }, 3000)
-
-        const btnCriar = document.querySelector('#btn-criar')
-        const btnListar = document.querySelector('#btn-listar')
-
-        btnCriar.addEventListener('click', () => {
-            document.querySelector('#new').style.display = 'flex'
-            document.querySelector('#lista').style.display = 'flex'
-        })
-
-        btnListar.addEventListener('click', () => {
-            document.querySelector('#new').style.display = 'flex'
-            document.querySelector('#lista').style.display = 'flex'
-        })
-
-    </script>
 </body>
 
 </html>

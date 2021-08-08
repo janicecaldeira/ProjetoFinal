@@ -9,47 +9,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href = "../static/css/login.css">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" >
-        <title>Login</title>
+        <title>Funko Pop Vinyl | Login</title>
     </head>
 
     <body>
 
         <section id="login">
-
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul class=flashes>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
+            <article id="msg">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </article>
           
             <form action='/auth' method="POST">
-                <a href="/">
-                    <i class="uil uil-house-user"></i>
-                </a>
-            
+                <a href="/"><i class="uil uil-house-user"></i></a>
                 <h1>Acesso a área administrativa</h1>
                 <input type="text" placeholder="Digite o usuário" id="user" name="user">
                 <input type="password" placeholder="Digite a senha" id="senha" name="senha">
                 <button type="submit">Entrar</button>
-            </form>
-
-            <a href="/logout"><li>
-                <i class="uil uil-angle-double-left"></i>
-                Sair</li>
-            </a> 
-        </section>
-        
-        </section>
-
-      
+            </form>   
     </body>
 
-    <footer>
-        
+    <footer class="footer__container">
+
+        <div class="footer-right">
+
+            <a href="https://github.com/janicecaldeira/ProjetoFinal/tree/main" target="_blank"><i class="uil uil-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+                <a href="/">.home</a>
+                <a href="/catalog">.catalog</a>
+                <a href="/about">.about</a>
+                <a href="/login">.admin</a>
+            </div>
+
+            <span>Grupo 2 &copy; 2021</span>
+        </div>
+
     </footer>
 
 </html>

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
 *{
     margin: 0;
@@ -59,9 +60,12 @@ section#login form{
 }
 
 section#login form h1{
+    font-family: 'Knewave';
     padding-bottom: 3rem;
     text-align: center;
-    color: hsla(0, 94%, 51%, 0.822);
+    color: hsl(0, 0%, 100%);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
     font-size: 2rem;
 }
 
@@ -104,10 +108,19 @@ color: #fff;
 
 section#login form a{
 text-decoration: none;
-color: hsla(0, 94%, 51%, 0.822);
+color: rgba(0, 0, 0, 0.822);
 font-size: 2rem;
 position: absolute;
+transition: ease-in-out .2s;
 }
+
+section#login form a:hover{
+  text-decoration: none;
+  color: hsla(0, 33%, 96%, 0.699);
+  font-size: 2rem;
+  position: absolute;
+  transform: scale(1.1);
+  }
 
 section#login ul {
   width: 40%;
@@ -131,6 +144,7 @@ section#login ul {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
+    margin-top: 7rem;
     text-align: left;
     font: normal 16px sans-serif;
     padding: 45px 50px;

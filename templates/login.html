@@ -17,19 +17,19 @@
         <section id="login">
             <article id="msg">
                 {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                <ul class=flashes>
-                    {% for message in messages %}
-                    <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                    {% if messages %}
+                        <ul class=flashes>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
                 {% endwith %}
             </article>
           
             <form action='/auth' method="POST">
                 <a href="/"><i class="uil uil-house-user"></i></a>
-                <h1>Acesso a área administrativa</h1>
+                <h1>Área Administrativa</h1>
                 <input type="text" placeholder="Digite o usuário" id="user" name="user">
                 <input type="password" placeholder="Digite a senha" id="senha" name="senha">
                 <button type="submit">Entrar</button>

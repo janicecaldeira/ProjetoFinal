@@ -215,8 +215,9 @@ a{
 
 /* about */
 .about{
-    min-height: 210%;
+    min-height: 230%;
     position: relative;
+    
 }
 .about h2{
     color: #fff;
@@ -270,7 +271,9 @@ a{
 /* footer */
 
 .footer__container {
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     background-color:hsla(0, 0%, 100%, 0.103);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;

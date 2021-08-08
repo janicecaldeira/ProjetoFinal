@@ -63,6 +63,7 @@ a{
     color: hsla(0, 94%, 51%, 0.822);
 }
 
+
 .home__img{
     height: 380px;
 }
@@ -106,6 +107,27 @@ a{
     -webkit-filter: drop-shadow(20px 20px 20px #222);
     filter: drop-shadow(20px 20px 20px #222);
 }
+
+.corp_img{
+    margin-bottom: 3rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.corp_img #blue{
+    width: 300px;
+    opacity: 30%;
+    transform: translatey(-90px);
+    
+}
+
+.corp_img #grupo2{
+    width: 350px;
+    opacity: 30%;
+    transform: translatey(-90px);
+    
+}
+
 
 
 .home__content{

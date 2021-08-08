@@ -9,37 +9,60 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href = "../static/css/style.css">
+        <link rel="stylesheet" href = "../static/css/adm.css">
         <title>Admin</title>
     </head>
-    <header>
 
-    </header>
+    <body class="body">
 
+      
+        <!-- <form action='/new' method="POST">
 
-    <body>
-        <nav>
-
-        </nav>
+            <h1>Cadastre um novo Funko</h1>
+    
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Nome do Funko" id="nome" name="nome">
+    
+            <label for="imagem">Imagem</label>
+            <input type="text" placeholder="Link da imagem" id="imagem" name="imagem">
+    
+            <label for="link">Música</label>
+            <input type="text" placeholder="Link de áudio" id="musica" name="musica">
+    
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"
+                placeholder="Digite a descrição do Funko"></textarea>
+    
+            <button type="submit">Enviar</button>
+    
+        </form> -->
 
         <section class="form">
-            <form>
-                <label for="user">Usuário: </label>
-                <input type="text" id="user" name="user">
-                <label for="password">Senha: </label>
-                <input type="password" id="password" name="password">
-                <button type="submit" id="entrar">Entrar</button>
-            </form>
-
-            <audio controls class="audio">
-                <source src="../static/audio/mariobros.mp3" type="audio/mpeg">
-            </audio>
+             <div id="aqui">
+                <br><br><br>
+                <p>Passe o mouse aqui para tocar a música</p>
+            </div>
+            <!-- <audio controls class="audio">
+                <source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/mpeg">
+            </audio> -->
+            <audio class="audio" style="width:100%" controls="" src="https://drive.google.com/uc?id=184GwsByIhLSrNKxzU0SjwkYCoOF5UQvW&amp;export=download"></audio>
 
         </section>
 
-        <section>
+        
 
-        </section>
+
+        <article id="msg">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </article>
 
         <script src='../static/js/script.js'></script>
     </body>

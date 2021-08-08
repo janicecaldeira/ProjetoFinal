@@ -128,7 +128,13 @@ a{
     
 }
 
-
+.home__content h1{
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+    color:rgb(0, 0, 0);
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
 
 .home__content{
     display: block;
@@ -142,6 +148,8 @@ a{
     border-radius: .5rem;
     transform: translateY(150px);
 }
+
+
 
 .home__button{
     display:block;

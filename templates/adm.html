@@ -50,33 +50,86 @@
         {% endwith %}
     </article>
 
-<section id="adm">
-    <p>Área reservada para a página ADM</p>
-</section>
+    <section id='adm'>
+        <form action='/new' method="POST">
+        <h1>Cadastre um novo Funko</h1>
 
-<footer class="footer__container">
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName">
 
-    <div class="footer-right">
+            <label for="imagem">Imagem</label>
+            <input type="text" placeholder="Link da imagem" id="imagem" name="funkoImg">
 
-        <a href="https://github.com/janicecaldeira/ProjetoFinal/tree/main" target="_blank"><i class="uil uil-github"></i></a>
+            <label for="link">Música</label>
+            <input type="text" placeholder="Link da música" id="musica" name="music">
 
-    </div>
+            <label for="descricao">Descrição</label>
+            <textarea name="description" id="descricao" cols="30" rows="10" placeholder="Insira a descrição">
+            </textarea>
 
-    <div class="footer-left">
+            <button type="submit">Enviar</button>            
+        </form>
 
-        <div class="footer-links">
-            <a href="/">.home</a>
-            <a href="/catalog">.catalog</a>
-            <a href="/about">.about</a>
-            <a href="/login">.admin</a>
+
+        {% if funko != '' %}
+        <article id="lista">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Imagem</th>
+                        <th>Música</th>
+                        <th>Descrição</th>
+                        <th style="text-align:center">Edição</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for f in funko %}
+                    <tr>
+                        <td>{{f.id}}</td>
+                        <td>{{f.funkoName}}</td>
+                        <td><a href="{{f.imagem}}" target="_blank">{{f.funkoImg}}</a></td>
+                        <td><a href="{{f.music}}" target="_blank">{{f.music}}</a></td>
+                        <td>{{f.description}}</td>
+                        <td>
+                            <a href="/edit/{{f.id}}">Editar</a>
+                            <a href="/delete/{{f.id}}">Apagar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </article>
+        {% endif %}
+    </section>
+
+    <footer class="footer__container">
+
+        <div class="footer-right">
+
+            <a href="https://github.com/janicecaldeira/ProjetoFinal/tree/main" target="_blank"><i class="uil uil-github"></i></a>
+
         </div>
 
-        <span>Grupo 2 &copy; 2021</span>
-    </div>
+        <div class="footer-left">
 
-</footer>
+            <div class="footer-links">
+                <a href="/">.home</a>
+                <a href="/catalog">.catalog</a>
+                <a href="/about">.about</a>
+                <a href="/login">.admin</a>
+            </div>
 
-<script src="../static/js/adm.js"></script>
+            <span>Grupo 2 &copy; 2021</span>
+        </div>
+
+    </footer>
+
+    <script src="../static/js/adm.js"></script>
 
 </body>
 

@@ -4,22 +4,21 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = 'blue'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qovpiolx:ldA1GZtyHZpNnDs-OcjClFO6In5BhivJ@kesavan.db.elephantsql.com/qovpiolx'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ldffxgvk:yoOt67_wPlM7TmXSk28a_BXiUXjI8S8e@kesavan.db.elephantsql.com/ldffxgvk'
 db = SQLAlchemy(app)
 
 class Funko(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     funkoName = db.Column(db.String(150), nullable=False)
-    funkoImg = db.Column(db.String(700), nullable=False)
-    description = db.Column(db.String(700), nullable=False)
-    music = db.Column(db.String(700), nullable=True)
+    funkoImg = db.Column(db.String(500), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
+    music = db.Column(db.String(500), nullable=True)
     
     def __init__(self, funkoName, funkoImg, description, music):
         self.funkoName = funkoName
         self.funkoImg = funkoImg
         self.description = description
         self.music = music
-
 
 @app.route('/')
 def index():
@@ -81,15 +80,15 @@ def id(id):
 
 @app.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
-    funkoEdit = Funko.query.get(id)
+    funko = Funko.query.get(id)
     if request.method == "POST":
-        funkoEdit.funkoName = request.form['funkoName']
-        funkoEdit.funkoImg = request.form['funkoImg']
-        funkoEdit.description = request.form['description']
-        funkoEdit.music = request.form['music']
+        funko.funkoName = request.form['funkoName']
+        funko.funkoImg = request.form['funkoImg']
+        funko.description = request.form['description']
+        funko.music = request.form['music']
         db.session.commit()
         return redirect('/adm')
-    return render_template('adm.html', funkoEdit=funkoEdit) 
+    return render_template('adm.html', funko=funko) 
 
 @app.route('/delete/<id>') 
 def delete(id):

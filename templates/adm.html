@@ -70,6 +70,27 @@
             <button type="submit">Enviar</button>            
         </form>
 
+        {% for f in funko %}
+        <form action='/edit/{{f.id}}' method="POST">
+            <h1>Edite o Funko</h1>
+    
+                <label for="nome">Nome</label>
+                <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName" value={{f.funkoName}}>
+    
+                <label for="imagem">Imagem</label>
+                <input type="text" placeholder="Link da imagem" id="imagem" name="funkoImg" value={{f.funkoImg}}>
+    
+                <label for="link">Música</label>
+                <input type="text" placeholder="Link da música" id="musica" name="music" value={{f.music}}>
+    
+                <label for="descricao">Descrição</label>
+                <textarea name="description" id="descricao" cols="30" rows="10" placeholder="Insira a descrição">
+                    {{f.description}}
+                </textarea>
+    
+                <button type="submit">Atualizar</button>            
+        </form>
+        {% endfor %}
 
         {% if funko != '' %}
         <article id="lista">

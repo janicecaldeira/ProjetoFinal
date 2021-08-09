@@ -80,15 +80,16 @@ def id(id):
 
 @app.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
-    funko = Funko.query.get(id)
+    funko = Funko.query.all()
+    funkoEdit = Funko.query.get(id)
     if request.method == "POST":
-        funko.funkoName = request.form['funkoName']
-        funko.funkoImg = request.form['funkoImg']
-        funko.description = request.form['description']
-        funko.music = request.form['music']
+        funkoEdit.funkoName = request.form['funkoName']
+        funkoEdit.funkoImg = request.form['funkoImg']
+        funkoEdit.description = request.form['description']
+        funkoEdit.music = request.form['music']
         db.session.commit()
         return redirect('/adm')
-    return render_template('adm.html', funko=funko) 
+    return render_template('adm.html', funkoEdit=funkoEdit, funko=funko) 
 
 @app.route('/delete/<id>') 
 def delete(id):

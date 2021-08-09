@@ -29,7 +29,8 @@ def index():
 @app.route('/catalog')
 def catalog():
     session['usuario_logado'] = None
-    return render_template('catalog.html')
+    funko = Funko.query.all()
+    return render_template('projetos.html', funko=funko, funko='')
 
 @app.route('/about')
 def about():
@@ -57,7 +58,7 @@ def adm():
         flash('Faça login!')
         return redirect('/login')
     funko = Funko.query.all()
-    return render_template('adm.html', funko=funko, funkoEdit='')
+    return render_template('adm.html', funko=funko)
    
 @app.route('/new', methods=['GET', 'POST'])
 def new():
@@ -81,7 +82,6 @@ def id(id):
 @app.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
     funkoEdit = Funko.query.get(id)
-    funko=Funko.query.all()
     if request.method == "POST":
         funkoEdit.funkoName = request.form['funkoName']
         funkoEdit.funkoImg = request.form['funkoImg']
@@ -89,14 +89,14 @@ def edit(id):
         funkoEdit.music = request.form['music']
         db.session.commit()
         return redirect('/adm')
-    return render_template('adm.html', funkoEdit=funkoEdit, funko=funko) 
+    return render_template('adm.html', funkoEdit=funkoEdit) 
 
 @app.route('/delete/<id>') 
 def delete(id):
     funko = Funko.query.get(id)
     db.session.delete(funko)
     db.session.commit()
-    return redirect('/')
+    return redirect('/adm')
 
 if __name__ == '__main__':
     db.create_all()

@@ -47,51 +47,24 @@
 
     </header>
     <body>
+        
         <section class = "catalog" id = "catalog">
+            {% for f in funko %}
             <div class="catalog__container">
                 <div class="card">
-                    <div class="imgbox">
-                        <img src="../static/img/pikachu.png">
+                    <div class="imgbox" id="personagem">
+                        <img src="{{f.funkoImg}}">
                     </div>
                     <div class="catalog__content">
-                        <audio class="audio" controls>
-                            <source src="../static/audio/pokemon.mp3">
+                        <audio class="audio" id="audio" controls>
+                            <source src="{{f.music}}">
                         </audio>
-                        <h2>Pikachu</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
+                        <h2>{{f.funkoName}}</h2>
+                        <p>{{f.description}}</p>
                     </div>
                 </div>
-        
-                <div class="card">
-                    <div class="imgbox">
-                        <img src="../static/img/sonic.png">
-                    </div>
-                    <div class="catalog__content">
-                        <audio class="audio" controls>
-                            <source src="../static/audio/sonic.mp3">
-                        </audio>
-                        <h2>Sonic</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
-                    </div>
-                </div>
-        
-                <div class="card">
-                    <div class="imgbox">
-                        <img src="../static/img/megaman.png">
-                    </div>
-                    <div class="catalog__content">
-                        <audio class="audio" controls>
-                            <source src="../static/audio/megaman.mp3">
-                        </audio>
-                        <h2>Megaman</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos libero laudantium eum provident molestias deserunt optio qui! Distinctio, adipisci commodi!</p>
-                    </div>
-                </div>
-        
             </div>
-
-
-
+            {% endfor %}
         </section>
 
         <section>

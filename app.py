@@ -30,7 +30,7 @@ def index():
 def catalog():
     session['usuario_logado'] = None
     funko = Funko.query.all()
-    return render_template('projetos.html', funko=funko, funko='')
+    return render_template('catalog.html', funko=funko)
 
 @app.route('/about')
 def about():

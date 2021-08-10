@@ -15,8 +15,9 @@
 
     <body class="body">
 
-      
-        <!-- <form action='/new' method="POST">
+    {% if funkoEdit == undefined %}
+    <article id="new">
+        <form action='/new' method="POST">
 
             <h1>Cadastre um novo Funko</h1>
     
@@ -35,22 +36,9 @@
     
             <button type="submit">Enviar</button>
     
-        </form> -->
-
-        <section class="form">
-             <div id="aqui">
-                <br><br><br>
-                <p>Passe o mouse aqui para tocar a música</p>
-            </div>
-            <!-- <audio controls class="audio">
-                <source src="https://www.computerhope.com/jargon/m/example.mp3" type="audio/mpeg">
-            </audio> -->
-            <audio class="audio" style="width:100%" controls="" src="https://drive.google.com/uc?id=184GwsByIhLSrNKxzU0SjwkYCoOF5UQvW&amp;export=download"></audio>
-
-        </section>
-
-        
-
+        </form>
+    </article>
+    {% endif %}
 
         <article id="msg">
             {% with messages = get_flashed_messages() %}
@@ -68,6 +56,44 @@
     </body>
 
     <footer>
+        <section class="modal">
+            <div id="card">
+
+                <a href="/" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <h2>Confirmação</h2>
+                <hr>
+
+                <p>Deseja realmente apagar: {{funko.id}} </p>
+                <div id="btns">
+                    <a class="btn-cancelar" id="close" href="/">Cancelar</a>
+                    <a class="btn-apagar" href="/delete/{{funko.id}}">Apagar</a>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <script>
+        setTimeout(() => {
+            document.querySelector('#msg').style.display = 'none'
+        }, 3000)
+
+        const btnCriar = document.querySelector('#btn-criar')
+        const btnListar = document.querySelector('#btn-listar')
+
+        btnCriar.addEventListener('click', () => {
+            document.querySelector('#new').style.display = 'flex'
+            document.querySelector('#lista').style.display = 'flex'
+        })
+
+        btnListar.addEventListener('click', () => {
+            document.querySelector('#new').style.display = 'flex'
+            document.querySelector('#lista').style.display = 'flex'
+        })
+
+    </script>
+</body>
+
+</html>
         
     </footer>
 

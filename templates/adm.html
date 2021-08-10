@@ -11,10 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/adm.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Funko Pop Vinyl | Adm</title>
 </head>
 
-<header class = "header" id= "header">
+<!-- <header class = "header" id= "header">
     <nav class="nav container">
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
@@ -34,9 +36,23 @@
         </div>
     </nav>
 
-</header>
+</header> -->
 
 <body>
+
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>Funko Admin</header>
+        <ul>
+            <li><a href="/"><i class="uil uil-house-user"></i>.home</a></li>
+            <li><a href="/catalog"><i class="fas fa-qrcode"></i>.catalog</a></li>
+            <li><a href="/about"><i class="fas fa-stream"></i>.about</a></li>
+        </ul>
+    </div>
 
     <article id="msg">
         {% with messages = get_flashed_messages() %}
@@ -52,7 +68,7 @@
 
     <section id='adm'>
         <form action='/new' method="POST">
-        <h1>Cadastre um novo Funko</h1>
+        <h1>Cadastro | Funko</h1>
 
             <label for="nome">Nome</label>
             <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName">
@@ -72,7 +88,7 @@
 
         {% for f in funko %}
         <form action='/edit/{{f.id}}' method="POST">
-            <h1>Edite o Funko</h1>
+            <h1>Editar | Funko</h1>
     
                 <label for="nome">Nome</label>
                 <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName" value={{f.funkoName}}>

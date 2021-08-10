@@ -1,3 +1,7 @@
+
+
+
+
 /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
@@ -84,6 +88,88 @@ article#msg ul {
 /* Página ADM */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 
+/* SIDEBAR */
+
+.sidebar {
+  margin-top: 2rem;
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #ffffff;
+  transition: all .5s ease;
+  border-radius: .5rem;
+}
+.sidebar header {
+  border-radius: .5rem;
+  font-size: 22px;
+  color: rgb(255, 9, 9);
+  line-height: 70px;
+  text-align: center;
+  background: #fcfcfc;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: #0066ff;
+  padding-left: 40px;
+  transition: .4s;
+  text-decoration: none;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background:#0066ff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 45px;
+  font-size: 30px;
+  color: #ffffff;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+/* END SIDEBAR  */
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -95,6 +181,19 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: #aacbfb;
+}
+
+section#adm{
+  width: 70%;
+  padding: 2rem;
+  margin: 2rem 2rem 2rem 9rem;
+}
+
+form{
+  align-items: center;
+  /* display: inline-block; */
+  position: relative;
+  margin: auto;
 }
 
 aside#left {
@@ -270,8 +369,10 @@ article#lista {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem;
+  padding: 5rem;
+  margin-right: 1rem;
   overflow-x: auto;
+  width: 107%;
 }
 
 
@@ -280,7 +381,7 @@ article#lista table {
   border-spacing: 0;
   padding: 3rem;
   background-color: #fff;
-  width: 65%;
+  width: 100%;
   box-shadow: rgba(149, 157, 165, .5) 0px 8px 24px;
   border-radius: 1rem;
 }

@@ -169,20 +169,29 @@ a{
 
 /* catalog page */
 
+.html_catalog{
+    position: relative;
+    min-height:100%;
+}
+
 .catalog{
+    width: 100%;
     min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 
 .catalog__container{
     position: relative;
-    width: 100%;
+    width: 25%;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding: 30px;
 }
 

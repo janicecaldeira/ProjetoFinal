@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = 'blue'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ldffxgvk:yoOt67_wPlM7TmXSk28a_BXiUXjI8S8e@kesavan.db.elephantsql.com/ldffxgvk'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///funkos.sqlite3'
 db = SQLAlchemy(app)
 
 class Funko(db.Model):

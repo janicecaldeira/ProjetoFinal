@@ -1,13 +1,12 @@
-let audio = document.querySelector(".audio")
-let imgbox = document.querySelectorAll(".imgbox")
+let audio = document.querySelectorAll(".audio")
+let card = document.querySelectorAll(".card")
 
-for(var i = imgbox.length; i--; ){
-    imgbox[i].addEventListener('mouseover', () => {
-        audio.currentTime = 0
-        audio.play()
+for (let c = 0; c < card.length; c++) {
+    card[c].addEventListener('mouseover', () => {
+        audio[c].play()
+        audio[c].volume = 0.3
     })
-
-    imgbox[i].addEventListener('mouseout', () => {
-        audio.pause()
+    card[c].addEventListener('mouseout', () => {
+        audio[c].pause()
     })
 }

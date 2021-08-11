@@ -28,8 +28,8 @@ def index():
 @app.route('/catalog')
 def catalog():
     session['usuario_logado'] = None
-    funko = Funko.query.all()
-    return render_template('catalog.html', funko=funko)
+    funkos = Funko.query.all()
+    return render_template('catalog.html', funkos=funkos)
 
 @app.route('/about')
 def about():
@@ -56,9 +56,9 @@ def adm():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         flash('Faça login!')
         return redirect('/login')
-    funko = Funko.query.all()
-    return render_template('adm.html', funko=funko)
-   
+    funkos = Funko.query.all()
+    return render_template('adm.html', funkos=funkos)
+
 @app.route('/new', methods=['GET', 'POST'])
 def new():
     if request.method == 'POST':
@@ -73,23 +73,24 @@ def new():
     flash('Funko adicionado com sucesso!')
     return redirect('/adm')
 
-@app.route('/<id>')
-def id(id):
-    funko = Funko.query.get(id)
-    return render_template('adm.html', funko=funko)
-
 @app.route('/edit/<id>', methods=['GET', 'POST'])
 def edit(id):
-    funko = Funko.query.all()
-    funkoEdit = Funko.query.get(id)
+    funko = Funko.query.get(id)
+    funkos = Funko.query.all()
     if request.method == "POST":
-        funkoEdit.funkoName = request.form['funkoName']
-        funkoEdit.funkoImg = request.form['funkoImg']
-        funkoEdit.description = request.form['description']
-        funkoEdit.music = request.form['music']
+        funko.funkoName = request.form['funkoName']
+        funko.funkoImg = request.form['funkoImg']
+        funko.description = request.form['description']
+        funko.music = request.form['music']
         db.session.commit()
         return redirect('/adm')
-    return render_template('adm.html', funkoEdit=funkoEdit, funko=funko) 
+    return render_template('adm.html', funko=funko, funkos=funkos) 
+
+@app.route('/<id>')
+def get_by_id(id):
+    funko = Funko.query.get(id)
+    all = Funko.query.all()
+    return render_template('adm.html', funkoDelete=funko, funkos=all )
 
 @app.route('/delete/<id>') 
 def delete(id):

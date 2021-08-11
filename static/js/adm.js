@@ -7,10 +7,10 @@ const btnListar = document.querySelector('#btn-listar')
 
 btnCriar.addEventListener('click', () => {
     document.querySelector('#new').style.display = 'flex'
-    document.querySelector('#lista').style.display = 'flex'
+    document.querySelector('#lista').style.display = 'none'
 })
 
 btnListar.addEventListener('click', () => {
-    document.querySelector('#new').style.display = 'flex'
+    document.querySelector('#new').style.display = 'none'
     document.querySelector('#lista').style.display = 'flex'
 })

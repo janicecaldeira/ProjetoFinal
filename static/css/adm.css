@@ -189,6 +189,10 @@ section#adm{
   margin: 2rem 2rem 2rem 9rem;
 }
 
+section #edit{
+  display: none;
+}
+
 form{
   align-items: center;
   /* display: inline-block; */
@@ -257,7 +261,7 @@ a {
   cursor: pointer;
 }
 
-article#new {
+article#adm {
 display: none;
 justify-content: center;
 align-items: center;
@@ -411,8 +415,8 @@ article#lista table a:hover{
   color: #aacbfb;
 }
 
-article#edit {
-  display: flex;
+.edit {
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 6rem;
@@ -515,7 +519,6 @@ section.modal div#card div#btns a.btn-apagar:hover{
 
 
 /* Fim dos estilos do modal */
-
 
 /* Quando a tela tiver no máximo 1682 de largura, faça o que tiver dentro desse @media */
 @media screen and (max-width: 1682px){

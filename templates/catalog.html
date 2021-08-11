@@ -49,18 +49,18 @@
     <body>
         
         <section class = "catalog" id = "catalog">
-            {% for f in funko %}
+            {% for funko in funkos %}
             <div class="catalog__container">
                 <div class="card">
                     <div class="imgbox" id="personagem">
-                        <img src="{{f.funkoImg}}">
+                        <img src="{{funko.funkoImg}}">
                     </div>
                     <div class="catalog__content">
                         <audio class="audio" id="audio" controls>
-                            <source src="{{f.music}}">
+                            <source src="{{funko.music}}">
                         </audio>
-                        <h2>{{f.funkoName}}</h2>
-                        <p>{{f.description}}</p>
+                        <h2>{{funko.funkoName}}</h2>
+                        <p>{{funko.description}}</p>
                     </div>
                 </div>
             </div>

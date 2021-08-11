@@ -52,12 +52,12 @@
             {% for funko in funkos %}
             <div class="catalog__container">
                 <div class="card">
-                    <div class="imgbox" id="personagem">
+                    <div class="imgbox">
                         <img src="{{funko.funkoImg}}">
                     </div>
                     <div class="catalog__content">
-                        <audio class="audio" id="audio" controls>
-                            <source src="{{funko.music}}">
+                        <audio class="audio" preload="auto">
+                            <source src="{{funko.music}}" type="audio/mpeg">
                         </audio>
                         <h2>{{funko.funkoName}}</h2>
                         <p>{{funko.description}}</p>

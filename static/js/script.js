@@ -1,13 +1,13 @@
-let audio = document.querySelector("#audio")
-let tocar = document.querySelector("#personagem")
+let audio = document.querySelector(".audio")
+let imgbox = document.querySelectorAll(".imgbox")
 
-audio.pause()
+for(var i = imgbox.length; i--; ){
+    imgbox[i].addEventListener('mouseover', () => {
+        audio.currentTime = 0
+        audio.play()
+    })
 
-tocar.addEventListener('mouseover', () => {
-    audio.currentTime = 0
-    audio.play()
-})
-
-tocar.addEventListener('mouseout', () => {
-    audio.pause()
-})
+    imgbox[i].addEventListener('mouseout', () => {
+        audio.pause()
+    })
+}

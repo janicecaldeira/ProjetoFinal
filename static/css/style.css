@@ -264,6 +264,12 @@ a{
 .about .about-icon{
     color: #fff;
     font-size: 2rem;
+    transition: ease-in-out .4s;
+}
+
+.about-icon:hover{
+    opacity: 50%;
+
 }
 
 .about__title{ 
@@ -352,6 +358,7 @@ a{
     display: inline-block;
     padding-right: 5px;
 }
+
   
   
   .footer__container .footer-right {
@@ -364,10 +371,10 @@ a{
     display: inline-block;
     width: 35px;
     height: 35px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 2px;
-    font-size: 20px;
-    color: black;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
     text-align: center;
     line-height: 35px;
     margin-left: 3px;

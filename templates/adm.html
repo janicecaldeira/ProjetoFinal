@@ -119,11 +119,12 @@
 
       
     {% if funko != undefined %}
-            <h2>Editar | Funko</h2>
-            <hr>
+            
 
-            <div>
+            <div class="edit_form">
                 <form action='/edit/{{funko.id}}' method="POST">
+                <h2>Editar</h2>
+                <!-- <hr>     -->
             
                         <label for="nome">Nome</label>
                         <input type="text" placeholder="Nome do Funko" id="nome" name="funkoName" value='{{funko.funkoName}}'>
@@ -145,20 +146,21 @@
 
     {% if funkoDelete != undefined %}
         <section class="modal">
-            <a href="/adm" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
-            <h2>Confirmação</h2>
-            <hr>
+            <div id="card"> 
+                <a href="/adm" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <h2>Confirmação</h2>
+                <hr>
 
-            <p>Deseja realmente apagar o Funko: {{funkoDelete.nome}} </p>
-            <div id="btns">
-               <a class="btn-cancelar" id="close" href="/adm">Não</a>
-               <a class="btn-apagar" href="/delete/{{funkoDelete.id}}">Sim</a>
+                <p>Deseja realmente apagar o Funko: {{funkoDelete.nome}} </p>
+                <div id="btns">
+                <a class="btn-cancelar" id="close" href="/adm">Não</a>
+                <a class="btn-apagar" href="/delete/{{funkoDelete.id}}">Sim</a>
+                </div>
             </div>
-         </div>
-      </section>
+        </section>
     {% endif %}
 
-    <footer class="footer__container">
+    <!-- <footer class="footer__container">
 
         <div class="footer-right">
 
@@ -178,7 +180,7 @@
             <span>Grupo 2 &copy; 2021</span>
         </div>
 
-    </footer>
+    </footer> -->
 
 </body>
 
